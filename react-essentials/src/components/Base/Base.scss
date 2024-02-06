@@ -1,0 +1,38 @@
+$color_1: #ebe7ef;
+$color_2: #a18aba;
+$color_3: #8964b0;
+$font-family_1: "Quicksand", sans-serif;
+$font-family_2: "Roboto Condensed", sans-serif;
+$background-color_1: #140524;
+$background-color_2: transparent;
+$background-color_3: #1b082f;
+$background-color_4: #7925d3;
+$background-color_5: #2f1d43;
+
+@import "https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap";
+* {
+	box-sizing: border-box;
+}
+html {
+	font-family: $font-family_1;
+	line-height: 1.5;
+	color: $color_1;
+	background: radial-gradient(#280a48, #20043d);
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+	min-height: 80rem;
+}
+main {
+	width: 90%;
+	max-width: 50rem;
+	margin: auto;
+	h2 {
+		text-align: center;
+		font-family: $font-family_2;
+		margin: 0 0 1.5rem 0;
+		color: $color_2;
+	}
+}
