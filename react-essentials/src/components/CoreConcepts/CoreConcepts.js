@@ -1,4 +1,5 @@
 import "./CoreConcepts.scss";
+import SectionLayout from "../SectionLayout/SectionLayout";
 import { CORE_CONCEPTS } from '../../data';
 
 function CoreConcept({image, title, description}) {
@@ -12,14 +13,13 @@ function CoreConcept({image, title, description}) {
 }
 function CoreConcepts() {
   return (
-    <section id="core-concepts">
-      <h2>Core Concepts</h2>
+    <SectionLayout title="Core Concepts" id="core-concepts">
       <ul>
         {CORE_CONCEPTS.map((conceptItem) => (
           <CoreConcept key={conceptItem.title} {...conceptItem} />
         ))}
       </ul>
-    </section>
+    </SectionLayout>
   );
 }
 

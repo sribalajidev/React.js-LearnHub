@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { EXAMPLES } from "../../data";
+import SectionLayout from "../SectionLayout/SectionLayout";
 import './HiddenTab.scss';
 
 function HiddenTab() {
@@ -24,34 +25,52 @@ function HiddenTab() {
   }
 
   return (
-    <section id="examples">
-      <h2>Examples</h2>
+    <SectionLayout title="Examples" id="examples">
+      <TabBtnLayout
+        ButtonTag="menu"
+        buttons={
+        <>
+          <TabButton isSelected={selectedTopic === 'components'} onClick={() => handleSelect('components')}>
+            Components
+          </TabButton>
+          <TabButton isSelected={selectedTopic === 'jsx'} onClick={() => handleSelect('jsx')}>
+            JSX
+          </TabButton>
+          <TabButton isSelected={selectedTopic === 'props'} onClick={() => handleSelect('props')}>
+            Props
+          </TabButton>
+          <TabButton isSelected={selectedTopic === 'state'} onClick={() => handleSelect('state')}>
+            State
+          </TabButton>
+        </>
+      }>
+        {tabContent}
+      </TabBtnLayout>
       <menu>
-        <TabButton isSelected={selectedTopic === 'components'} onSelect={() => handleSelect('components')}>
-          Components
-        </TabButton>
-        <TabButton isSelected={selectedTopic === 'jsx'} onSelect={() => handleSelect('jsx')}>
-          JSX
-        </TabButton>
-        <TabButton isSelected={selectedTopic === 'props'} onSelect={() => handleSelect('props')}>
-          Props
-        </TabButton>
-        <TabButton isSelected={selectedTopic === 'state'} onSelect={() => handleSelect('state')}>
-          State
-        </TabButton>
       </menu>
-      {tabContent}
-    </section>
+    </SectionLayout>
   );
 }
 
-function TabButton({children, onSelect, isSelected}) {
+function TabButton({children, isSelected, ...attributes}) {
   return (
     <li>
-      <button className={isSelected ? 'active' : undefined} onClick={onSelect}>
+      <button className={isSelected ? 'active' : undefined} {...attributes}>
         {children}
       </button>
     </li>
+  );
+}
+
+function TabBtnLayout ({ children, buttons, ButtonTag }) {
+  // const ButtonTag = buttonTag;
+  return (
+    <>
+      <ButtonTag>
+        {buttons}
+      </ButtonTag>
+      {children}
+    </>
   );
 }
 
