@@ -2,7 +2,7 @@ import '../Base/Base.scss';
 
 import { useState } from 'react';
 
-function Player({initialname, symbol}) {
+function Player({initialname, symbol, isActive, onChangeName}) {
   const [playerName, setPlayerName] = useState(initialname);
   const [isEditing, setIsEditing] = useState(false);
   function handleEditClick() {
@@ -15,6 +15,9 @@ function Player({initialname, symbol}) {
 
   function handleNameChange(event) {
     setPlayerName(event.target.value);
+    if(isEditing) {
+      onChangeName(symbol, playerName);
+    }
   }
 
   let editPlayerName = <span className='player-name'>{ playerName }</span>;
@@ -25,7 +28,7 @@ function Player({initialname, symbol}) {
   }
 
   return (
-    <li>
+    <li className={isActive ? 'active' : undefined}>
       <span className='player'>
         { editPlayerName }
         <span className='player-symbol'>{ symbol }</span>
