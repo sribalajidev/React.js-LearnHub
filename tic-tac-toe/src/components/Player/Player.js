@@ -11,13 +11,13 @@ function Player({initialname, symbol, isActive, onChangeName}) {
 
     // Recommended Practice
     setIsEditing( (editing) => !editing);
+    if(isEditing) {
+      onChangeName(symbol, playerName);
+    }
   }
 
   function handleNameChange(event) {
     setPlayerName(event.target.value);
-    if(isEditing) {
-      onChangeName(symbol, playerName);
-    }
   }
 
   let editPlayerName = <span className='player-name'>{ playerName }</span>;
