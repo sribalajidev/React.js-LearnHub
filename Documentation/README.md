@@ -1,8 +1,6 @@
 
 React.js Learning Documentation:
 
-Day 1 (24th Jan 2024)
-
 What is React and why exactly would you use it?
 
 	It’s a library for web and native user interfaces and it’s a Javascript library. Because React, since it's a JavaScript library, uses JavaScript in the browser to update the page and the user interface we see on that page without reloading the page. 
@@ -84,8 +82,6 @@ Now all the values will be added to the object utils \
 and we can output that values like this
 
 **console.log(utils.apiKey)**
-
-Day 2 (25 Jan 2024)
 
 Objects in JavaScript can be used to group multiple values together. 
 
@@ -176,7 +172,6 @@ React allows you to pass data to components voa a concept called “Props”
 **Alternative Props Syntax: **We can make a file named data.js where we store all the content for a component as object and import that file in our app.js \
 we can simply use like this to pull all the props into component for eg: &lt;CoreConcept {...CORE_CONCEPTS[0]}/>
 
-Day 3 (5 Feb 2024)
 
  \
 There’s a special “children” props we can use in react for building component. Like other props it wont be added as attributes to component tag. Instead it refers to the text between the component tags. It can be text or complex jsx structure. \
@@ -252,7 +247,6 @@ Here “cont[counter” is current state value provided by react, May change if 
 
 And “setCounter” in const is state updating function, updates the stored value and tells react to re-execute the component function in which useState(0 was called.
 
-Day 4 (6 Feb 2024)
 
 React Projects must be “built” (via a build process) before deployment.
 
@@ -261,7 +255,6 @@ React code you write and test -> Build Process (changes and optimize your code, 
 In React function we can’t return two values or component structure so we need a wrapper tag to print those two values or component in a function, but there will be an empty wrapper tag will be gets rendered to avoid this React has special fragment. \
 To do import { Fragment } from ‘react’ - it’s a component in react and use &lt;Fragment>&lt;/Fragment> (or) &lt;>&lt;/>  to wrap the components in return for function where we need to output multiple values
 
-Day 5 (7 Feb 2024)
 
 Not all content must go into components 
 
@@ -316,7 +309,6 @@ https://charitfix.vercel.app/theme/index-two.html
 
 [https://github.com/SoaresLance10/PennX-SD4x-Programming-for-the-Web-with-JavaScript/blob/master/HW3/calc.js](https://github.com/SoaresLance10/PennX-SD4x-Programming-for-the-Web-with-JavaScript/blob/master/HW3/calc.js)
 
-Day 6 (6 Mar 2024)
 
 Lifting State Up : 
 
@@ -329,7 +321,6 @@ Ancestor passes the state value via props to the child components. \
 Ancestor component manages state value that’s needed by the both child 1 and child2 component. \
  \
  \
-Day 7 (7 Mar 2024)
 
 Styling React Apps:
 
